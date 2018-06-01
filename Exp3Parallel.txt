@@ -1,0 +1,9 @@
+#!/bin/bash -l
+#PBS -l nodes=1:ppn=24,mem=62gb,walltime=05:00:00
+#PBS -m abe
+#PBS -M whit1951@umn.edu
+#PBS -N Exp3Parallel
+cd /home/forester/whit1951
+module load R
+R CMD BATCH Exp3Parallel.R
+wait

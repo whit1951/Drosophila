@@ -491,3 +491,124 @@ gg<- gg + theme(strip.text.x = element_text(angle = 90))
 gg<- gg + theme(legend.text = element_text(vjust=0.5, size=14), legend.title=element_text(vjust=0.5, size=20))
 gg
 dev.off()
+
+#' Subdivide experiment 3 by betas & scaled infectiousness
+Exp3beta1inf1<-Exp3[which(Exp3$beta==1 & Exp3$scale_i==1),]
+Exp3beta0.5inf1<-Exp3[which(Exp3$beta==0.5 & Exp3$scale_i==1),]
+Exp3beta0.1inf1<-Exp3[which(Exp3$beta==0.1 & Exp3$scale_i==1),]
+
+#' Beta= 0.1
+
+tiff("Exp3beta0.1inf1_maxI.tiff", height = 7, width = 13, units = "in", compression = "lzw", res = 300)
+sdf <- summaryBy(max_inf~ vary_agg+ vary_dur +vary_infect + radius, data=Exp3beta0.1inf1, FUN=mean)
+gg <- ggplot(sdf, aes(x=as.factor(vary_agg), y=as.factor(vary_dur), fill=max_inf.mean))
+#sdf$betas <- ordered(sdf$betas, levels = c("0 -6", "0 -3", "0 0", "3 -6", "3 -3", "3 0", "6 -6", "6 -3", "6 0"))
+gg <- gg + geom_tile(color="white", size=0.1)
+gg <- gg + scale_fill_viridis(name="Maximum number of \n infected flies")
+gg <- gg + coord_equal()
+gg <- gg + facet_grid(radius ~ vary_infect )
+gg<- gg+ labs(x="Vary Aggregation", y="Vary Duration")
+gg<- gg+ theme(axis.title = element_text(face="bold", size=24))
+gg<- gg + theme(axis.text.x = element_text(angle=90, hjust=0, vjust=0.5, size=16))
+gg<- gg + theme(axis.text.y = element_text(vjust=0.5, size=16)) 
+gg<- gg + theme(strip.text = element_text(vjust=0.5, size=18))
+gg<- gg + theme(strip.text.x = element_text(angle = 90))
+gg<- gg + theme(legend.text = element_text(vjust=0.5, size=14), legend.title=element_text(vjust=0.5, size=20))
+gg
+dev.off()
+
+tiff("Exp3beta0.1inf1_dur.tiff", height = 7, width = 13, units = "in", compression = "lzw", res = 300)
+sdf <- summaryBy(duration~ vary_agg+ vary_dur +vary_infect + radius, data=Exp3beta0.1inf1, FUN=mean)
+gg <- ggplot(sdf, aes(x=as.factor(vary_agg), y=as.factor(vary_dur), fill=duration.mean))
+#sdf$betas <- ordered(sdf$betas, levels = c("0 -6", "0 -3", "0 0", "3 -6", "3 -3", "3 0", "6 -6", "6 -3", "6 0"))
+gg <- gg + geom_tile(color="white", size=0.1)
+gg <- gg + scale_fill_viridis(name="Duration")
+gg <- gg + coord_equal()
+gg <- gg + facet_grid(radius ~ vary_infect )
+gg<- gg+ labs(x="Vary Aggregation", y="Vary Duration")
+gg<- gg+ theme(axis.title = element_text(face="bold", size=24))
+gg<- gg + theme(axis.text.x = element_text(angle=90, hjust=0, vjust=0.5, size=16))
+gg<- gg + theme(axis.text.y = element_text(vjust=0.5, size=16)) 
+gg<- gg + theme(strip.text = element_text(vjust=0.5, size=18))
+gg<- gg + theme(strip.text.x = element_text(angle = 90))
+gg<- gg + theme(legend.text = element_text(vjust=0.5, size=14), legend.title=element_text(vjust=0.5, size=20))
+gg
+dev.off()
+
+
+#' Beta= 0.5
+
+tiff("Exp3beta0.5inf1_maxI.tiff", height = 7, width = 13, units = "in", compression = "lzw", res = 300)
+sdf <- summaryBy(max_inf~ vary_agg+ vary_dur +vary_infect + radius, data=Exp3beta0.5inf1, FUN=mean)
+gg <- ggplot(sdf, aes(x=as.factor(vary_agg), y=as.factor(vary_dur), fill=max_inf.mean))
+#sdf$betas <- ordered(sdf$betas, levels = c("0 -6", "0 -3", "0 0", "3 -6", "3 -3", "3 0", "6 -6", "6 -3", "6 0"))
+gg <- gg + geom_tile(color="white", size=0.1)
+gg <- gg + scale_fill_viridis(name="Maximum number of \n infected flies")
+gg <- gg + coord_equal()
+gg <- gg + facet_grid(radius ~ vary_infect )
+gg<- gg+ labs(x="Vary Aggregation", y="Vary Duration")
+gg<- gg+ theme(axis.title = element_text(face="bold", size=24))
+gg<- gg + theme(axis.text.x = element_text(angle=90, hjust=0, vjust=0.5, size=16))
+gg<- gg + theme(axis.text.y = element_text(vjust=0.5, size=16)) 
+gg<- gg + theme(strip.text = element_text(vjust=0.5, size=18))
+gg<- gg + theme(strip.text.x = element_text(angle = 90))
+gg<- gg + theme(legend.text = element_text(vjust=0.5, size=14), legend.title=element_text(vjust=0.5, size=20))
+gg
+dev.off()
+
+tiff("Exp3beta0.5inf1_dur.tiff", height = 7, width = 13, units = "in", compression = "lzw", res = 300)
+sdf <- summaryBy(duration~ vary_agg+ vary_dur +vary_infect + radius, data=Exp3beta0.5inf1, FUN=mean)
+gg <- ggplot(sdf, aes(x=as.factor(vary_agg), y=as.factor(vary_dur), fill=duration.mean))
+#sdf$betas <- ordered(sdf$betas, levels = c("0 -6", "0 -3", "0 0", "3 -6", "3 -3", "3 0", "6 -6", "6 -3", "6 0"))
+gg <- gg + geom_tile(color="white", size=0.1)
+gg <- gg + scale_fill_viridis(name="Duration")
+gg <- gg + coord_equal()
+gg <- gg + facet_grid(radius ~ vary_infect )
+gg<- gg+ labs(x="Vary Aggregation", y="Vary Duration")
+gg<- gg+ theme(axis.title = element_text(face="bold", size=24))
+gg<- gg + theme(axis.text.x = element_text(angle=90, hjust=0, vjust=0.5, size=16))
+gg<- gg + theme(axis.text.y = element_text(vjust=0.5, size=16)) 
+gg<- gg + theme(strip.text = element_text(vjust=0.5, size=18))
+gg<- gg + theme(strip.text.x = element_text(angle = 90))
+gg<- gg + theme(legend.text = element_text(vjust=0.5, size=14), legend.title=element_text(vjust=0.5, size=20))
+gg
+dev.off()
+
+#' Beta= 1
+
+tiff("Exp3beta1inf1_maxI.tiff", height = 7, width = 13, units = "in", compression = "lzw", res = 300)
+sdf <- summaryBy(max_inf~ vary_agg+ vary_dur +vary_infect + radius, data=Exp3beta1inf1, FUN=mean)
+gg <- ggplot(sdf, aes(x=as.factor(vary_agg), y=as.factor(vary_dur), fill=max_inf.mean))
+#sdf$betas <- ordered(sdf$betas, levels = c("0 -6", "0 -3", "0 0", "3 -6", "3 -3", "3 0", "6 -6", "6 -3", "6 0"))
+gg <- gg + geom_tile(color="white", size=0.1)
+gg <- gg + scale_fill_viridis(name="Maximum number of \n infected flies")
+gg <- gg + coord_equal()
+gg <- gg + facet_grid(radius ~ vary_infect )
+gg<- gg+ labs(x="Vary Aggregation", y="Vary Duration")
+gg<- gg+ theme(axis.title = element_text(face="bold", size=24))
+gg<- gg + theme(axis.text.x = element_text(angle=90, hjust=0, vjust=0.5, size=16))
+gg<- gg + theme(axis.text.y = element_text(vjust=0.5, size=16)) 
+gg<- gg + theme(strip.text = element_text(vjust=0.5, size=18))
+gg<- gg + theme(strip.text.x = element_text(angle = 90))
+gg<- gg + theme(legend.text = element_text(vjust=0.5, size=14), legend.title=element_text(vjust=0.5, size=20))
+gg
+dev.off()
+
+tiff("Exp3beta1inf1_dur.tiff", height = 7, width = 13, units = "in", compression = "lzw", res = 300)
+sdf <- summaryBy(duration~ vary_agg+ vary_dur +vary_infect + radius, data=Exp3beta1inf1, FUN=mean)
+gg <- ggplot(sdf, aes(x=as.factor(vary_agg), y=as.factor(vary_dur), fill=duration.mean))
+#sdf$betas <- ordered(sdf$betas, levels = c("0 -6", "0 -3", "0 0", "3 -6", "3 -3", "3 0", "6 -6", "6 -3", "6 0"))
+gg <- gg + geom_tile(color="white", size=0.1)
+gg <- gg + scale_fill_viridis(name="Duration")
+gg <- gg + coord_equal()
+gg <- gg + facet_grid(radius ~ vary_infect )
+gg<- gg+ labs(x="Vary Aggregation", y="Vary Duration")
+gg<- gg+ theme(axis.title = element_text(face="bold", size=24))
+gg<- gg + theme(axis.text.x = element_text(angle=90, hjust=0, vjust=0.5, size=16))
+gg<- gg + theme(axis.text.y = element_text(vjust=0.5, size=16)) 
+gg<- gg + theme(strip.text = element_text(vjust=0.5, size=18))
+gg<- gg + theme(strip.text.x = element_text(angle = 90))
+gg<- gg + theme(legend.text = element_text(vjust=0.5, size=14), legend.title=element_text(vjust=0.5, size=20))
+gg
+dev.off()
+

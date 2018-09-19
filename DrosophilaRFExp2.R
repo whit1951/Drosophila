@@ -17,10 +17,10 @@ Exp2$outbreak<-ifelse(Exp2$max_inf>1, 1,0)
 set.seed(213)
 
 tic=Sys.time()
-fit.cf1 <- cforest(outbreak ~ index_line+index_sex+radius+beta+scale_i, data=Exp2, controls=cforest_unbiased(ntree=100))
+fit.cf1 <- cforest(outbreak ~ index_line+index_sex+radius+beta+scale_i, data=Exp2, controls=cforest_unbiased(ntree=1000))
 v1 <- varimp(fit.cf1, conditional= TRUE)
 v1<-v1[order(v1)]
-write.csv(v1, "Exp2RF_logit100.csv")
+write.csv(v1, "Exp2RF_logit1000.csv")
 
 print(difftime(Sys.time(),tic,units="mins"))
 
@@ -33,26 +33,26 @@ Exp2_success<-Exp2[which(Exp2$outbreak==1),]
 
 
 tic=Sys.time()
-fit.cf2 <- cforest(max_inf ~ index_line+index_sex+radius+beta+scale_i, data=Exp2_success, controls=cforest_unbiased(ntree=100))
+fit.cf2 <- cforest(max_inf ~ index_line+index_sex+radius+beta+scale_i, data=Exp2_success, controls=cforest_unbiased(ntree=1000))
 v2 <- varimp(fit.cf2, conditional= TRUE)
 v2<-v2[order(v2)]
-write.csv(v2, "Exp2RF_maxI100.csv")
+write.csv(v2, "Exp2RF_maxI1000.csv")
 
 print(difftime(Sys.time(),tic,units="mins"))
 
 tic=Sys.time()
-fit.cf3 <- cforest(duration ~ index_line+index_sex+radius+beta+scale_i, data=Exp2_success, controls=cforest_unbiased(ntree=100))
+fit.cf3 <- cforest(duration ~ index_line+index_sex+radius+beta+scale_i, data=Exp2_success, controls=cforest_unbiased(ntree=1000))
 v3 <- varimp(fit.cf3, conditional= TRUE)
 v3<-v3[order(v3)]
-write.csv(v3, "Exp2RF_dur100.csv")
+write.csv(v3, "Exp2RF_dur1000.csv")
 
 print(difftime(Sys.time(),tic,units="mins"))
 
 tic=Sys.time()
-fit.cf4 <- cforest(R0 ~ index_line+index_sex+radius+beta+scale_i, data=Exp2_success, controls=cforest_unbiased(ntree=100))
+fit.cf4 <- cforest(R0 ~ index_line+index_sex+radius+beta+scale_i, data=Exp2_success, controls=cforest_unbiased(ntree=1000))
 v4 <- varimp(fit.cf4, conditional= TRUE)
 v4<-v4[order(v4)]
-write.csv(v4, "Exp2RF_R0_100.csv")
+write.csv(v4, "Exp2RF_R0_1000.csv")
 
 print(difftime(Sys.time(),tic,units="mins"))
 

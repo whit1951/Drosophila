@@ -18,9 +18,9 @@ library(cowplot)
 # Experiment 1 ------------------------------------------------------------
 
 #Load importance values (not scaled by SD)
-imp_logit<-read.csv("Exp1RF_logit100.csv")
-imp_logitprev<-read.csv("Exp1RF_maxI100.csv")
-imp_logitdur<-read.csv("Exp1RF_dur100.csv")
+imp_logit<-read.csv("Exp1RF_logit1000.csv")
+imp_logitprev<-read.csv("Exp1RF_maxI1000.csv")
+imp_logitdur<-read.csv("Exp1RF_dur1000.csv")
 
 
 #imp_logit$SD<-rep(0.005, times=nrow(imp_logit))
@@ -105,10 +105,10 @@ dev.off()
 # Experiment 2 ------------------------------------------------------------
 
 #Load importance values (not scaled by SD)
-imp_logit<-read.csv("Exp2RF_logit100.csv")
-imp_logitprev<-read.csv("Exp2RF_maxI100.csv")
-imp_logitdur<-read.csv("Exp2RF_dur100.csv")
-imp_logitR0<-read.csv("Exp2RF_R0_100.csv")
+imp_logit<-read.csv("Exp2RF_logit1000.csv")
+imp_logitprev<-read.csv("Exp2RF_maxI1000.csv")
+imp_logitdur<-read.csv("Exp2RF_dur1000.csv")
+imp_logitR0<-read.csv("Exp2RF_R0_1000.csv")
 
 #imp_logit$SD<-rep(0.005, times=nrow(imp_logit))
 A<-ggplot(imp_logit, aes(x=reorder(X, x), y=x)) + 
@@ -213,10 +213,10 @@ dev.off()
 # Experiment 3 ------------------------------------------------------------
 
 #Load importance values (not scaled by SD)
-imp_logit<-read.csv("Exp3RF_logit100.csv")
-imp_logitprev<-read.csv("Exp3RF_maxI100.csv")
-imp_logitdur<-read.csv("Exp3RF_dur100.csv")
-imp_logitR0<-read.csv("Exp3RF_R0_100.csv")
+imp_logit<-read.csv("Exp3RF_logit1000.csv")
+imp_logitprev<-read.csv("Exp3RF_maxI1000.csv")
+imp_logitdur<-read.csv("Exp3RF_dur1000.csv")
+imp_logitR0<-read.csv("Exp3RF_R0_1000.csv")
 
 #imp_logit$SD<-rep(0.005, times=nrow(imp_logit))
 A<-ggplot(imp_logit, aes(x=reorder(X, x), y=x)) + 

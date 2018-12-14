@@ -32,13 +32,13 @@ A<-ggplot(imp_logit, aes(x=reorder(X, x), y=x)) +
   #               size=.3,    # Thinner lines
   #               width=.2,
   #               position=position_dodge(.9)) +
-  scale_x_discrete(element_blank(), labels = c("scale_i" = "scaled infectiousness",
+  scale_x_discrete(element_blank(), labels = c("scale_i" = "scaled infectiousness", "beta" = "transmission efficiency",
                                                "radius" =  "radius","sex" = "sex", "line" = "genetic background")) +
   ylab("MDA") +
   #ylab("")+
   theme_bw()+ theme(plot.margin = unit(c(0.1, 0, 0, 0), "cm"))+
   #ggtitle("(A)") + #" Variable Importance for Epidemic \nSuccess") +
-  theme(axis.text=element_text(size=6), plot.title = element_text(size = 8), axis.title=element_text(size=6), axis.text.x=element_text(angle=270, hjust=0, vjust=0.2), axis.text.y=element_text(vjust=2)) 
+  theme(axis.text=element_text(size=6), plot.title = element_text(size = 8), axis.title=element_text(size=6), axis.text.x=element_text(angle=270, hjust=0, vjust=0.5)) 
 #theme(plot.margin=unit(c(0.1,0.1,0,0), "cm"))
 # theme_bw(axis.text=element_text(size=14),    axis.title=element_text(size=14,face="bold"), plot.title = element_text(size = 40))
 A
@@ -52,12 +52,12 @@ B<-ggplot(imp_logitprev, aes(x=reorder(X, x), y=x)) +
   #               size=.3,    # Thinner lines
   #               width=.2,
   #               position=position_dodge(.9)) +
-  scale_x_discrete(element_blank(), labels = c("scale_i" = "scaled infectiousness",
-                                               "radius" =  "radius","sex" = "sex", "line" = "genetic background")) +  #ylab("Mean Decrease in Accuracy") +
+  scale_x_discrete(element_blank(), labels = c("scale_i" = "scaled infectiousness", "beta" = "transmission efficiency",
+                                               "radius" =  "radius","sex" = "sex", "line" = "genetic background")) +
   ylab(NULL)+
   theme_bw()+ theme(plot.margin = unit(c(0.25, 0, 0, 0), "cm"))+
   #ggtitle("(B)") + #" Variable Importance for Maximum \nPrevalence|Success") +
-  theme(axis.text=element_text(size=6), plot.title = element_text(size = 8), axis.title=element_text(size=6), axis.text.x=element_text(angle=270, hjust=0, vjust=0.2)) 
+  theme(axis.text=element_text(size=6), plot.title = element_text(size = 8), axis.title=element_text(size=6), axis.text.x=element_text(angle=270, hjust=0, vjust=0.5)) 
 
 #theme(plot.margin=unit(c(-0.25,0.1,0,0), "cm"))
 #coord_flip()
@@ -72,13 +72,13 @@ C<-ggplot(imp_logitdur, aes(x=reorder(X, x), y=x)) +
   #               size=.3,    # Thinner lines
   #               width=.2,
   #               position=position_dodge(.9)) +
-  scale_x_discrete(element_blank(), labels = c("scale_i" = "scaled infectiousness",
-                                               "radius" =  "radius","sex" = "sex", "line" = "genetic background")) +  #ylab("Mean Decrease in Accuracy") +
+  scale_x_discrete(element_blank(), labels = c("scale_i" = "scaled infectiousness", "beta" = "transmission efficiency",
+                                               "radius" =  "radius","sex" = "sex", "line" = "genetic background")) +
   ylab(NULL)+
   theme_bw()+ theme(plot.margin = unit(c(0.1, 0, 0, 0), "cm"))+
   #ggtitle("(C)") + #" Variable Importance for Epidemic \nDuration|Success") +
   
-  theme(axis.text=element_text(size=6), plot.title = element_text(size = 8), axis.title=element_text(size=6), axis.text.x=element_text(angle=270, hjust=0, vjust=0.2)) 
+  theme(axis.text=element_text(size=6), plot.title = element_text(size = 8), axis.title=element_text(size=6), axis.text.x=element_text(angle=270, hjust=0, vjust=0.5)) 
 
 #theme(plot.margin=unit(c(-0.25,0.1,0,0), "cm"))
 #coord_flip()
@@ -88,7 +88,6 @@ prow <- plot_grid(A, B, C,
                   align = 'vh',
                   labels = c("(A)", "(B)", "(C)"),
                   hjust = -0.60,
-                  vjust = 2,
                   ncol = 3, label_size=6
 )
 #paxis <- axis_canvas(prow, axis = "y") 

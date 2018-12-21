@@ -32,8 +32,8 @@ A<-ggplot(imp_logit, aes(x=reorder(X, x), y=x)) +
   #               size=.3,    # Thinner lines
   #               width=.2,
   #               position=position_dodge(.9)) +
-  scale_x_discrete(element_blank(), labels = c("scale_i" = "scaled infectiousness", "beta" = "transmission efficiency",
-                                               "radius" =  "radius","sex" = "sex", "line" = "genetic background")) +
+  scale_x_discrete(element_blank(), labels = c("scale_i" = expression("scaled inf."(eta)), "beta" = expression("trans. eff."(tau)),
+                                               "radius" =  "radius (r)","sex" = "sex", "line" = "genetic back.")) +
   ylab("MDA") +
   #ylab("")+
   theme_bw()+ theme(plot.margin = unit(c(0.1, 0, 0, 0), "cm"))+
@@ -52,8 +52,8 @@ B<-ggplot(imp_logitprev, aes(x=reorder(X, x), y=x)) +
   #               size=.3,    # Thinner lines
   #               width=.2,
   #               position=position_dodge(.9)) +
-  scale_x_discrete(element_blank(), labels = c("scale_i" = "scaled infectiousness", "beta" = "transmission efficiency",
-                                               "radius" =  "radius","sex" = "sex", "line" = "genetic background")) +
+  scale_x_discrete(element_blank(), labels = c("scale_i" = expression("scaled inf."(eta)), "beta" = expression("trans. eff."(tau)),
+                                               "radius" =  "radius (r)","sex" = "sex", "line" = "genetic back.")) +
   ylab(NULL)+
   theme_bw()+ theme(plot.margin = unit(c(0.25, 0, 0, 0), "cm"))+
   #ggtitle("(B)") + #" Variable Importance for Maximum \nPrevalence|Success") +
@@ -72,8 +72,8 @@ C<-ggplot(imp_logitdur, aes(x=reorder(X, x), y=x)) +
   #               size=.3,    # Thinner lines
   #               width=.2,
   #               position=position_dodge(.9)) +
-  scale_x_discrete(element_blank(), labels = c("scale_i" = "scaled infectiousness", "beta" = "transmission efficiency",
-                                               "radius" =  "radius","sex" = "sex", "line" = "genetic background")) +
+  scale_x_discrete(element_blank(), labels = c("scale_i" = expression("scaled inf."(eta)), "beta" = expression("trans. eff."(tau)),
+                                               "radius" =  "radius (r)","sex" = "sex", "line" = "genetic back.")) +
   ylab(NULL)+
   theme_bw()+ theme(plot.margin = unit(c(0.1, 0, 0, 0), "cm"))+
   #ggtitle("(C)") + #" Variable Importance for Epidemic \nDuration|Success") +
@@ -117,8 +117,8 @@ A<-ggplot(imp_logit, aes(x=reorder(X, x), y=x)) +
   #               size=.3,    # Thinner lines
   #               width=.2,
   #               position=position_dodge(.9)) +
-  scale_x_discrete(element_blank(), labels = c("scale_i" = "scaled infectiousness",
-                                               "radius" =  "radius","index_sex" = "index sex", "index_line" = "index line")) +
+  scale_x_discrete(element_blank(), labels = c("scale_i" = expression("scaled inf."(eta)),"beta" = expression("trans. eff."(tau)),
+                                               "radius" =  "radius (r)","index_sex" = "index sex", "index_line" = "index line")) +
   ylab("MDA") +
   #ylab("")+
   theme_bw()+ theme(plot.margin = unit(c(0.1, 0, 0, 0), "cm"))+
@@ -137,8 +137,8 @@ B<-ggplot(imp_logitprev, aes(x=reorder(X, x), y=x)) +
   #               size=.3,    # Thinner lines
   #               width=.2,
   #               position=position_dodge(.9)) +
-  scale_x_discrete(element_blank(), labels = c("scale_i" = "scaled infectiousness",
-                                               "radius" =  "radius","index_sex" = "index sex", "index_line" = "index line")) +
+  scale_x_discrete(element_blank(), labels = c("scale_i" = expression("scaled inf."(eta)),"beta" = expression("trans. eff."(tau)),
+                                               "radius" =  "radius (r)","index_sex" = "index sex", "index_line" = "index line")) +
   #ylab("Mean Decrease in Accuracy") +
   ylab(NULL)+
   theme_bw()+ theme(plot.margin = unit(c(0.25, 0, 0, 0), "cm"))+
@@ -158,8 +158,8 @@ C<-ggplot(imp_logitdur, aes(x=reorder(X, x), y=x)) +
   #               size=.3,    # Thinner lines
   #               width=.2,
   #               position=position_dodge(.9)) +
-  scale_x_discrete(element_blank(), labels = c("scale_i" = "scaled infectiousness",
-                                               "radius" =  "radius","index_sex" = "index sex", "index_line" = "index line")) +
+  scale_x_discrete(element_blank(), labels = c("scale_i" = expression("scaled inf."(eta)),"beta" = expression("trans. eff."(tau)),
+                                               "radius" =  "radius (r)","index_sex" = "index sex", "index_line" = "index line")) +
   #ylab("Mean Decrease in Accuracy") +
   ylab(NULL)+
   theme_bw()+ theme(plot.margin = unit(c(0.1, 0, 0, 0), "cm"))+
@@ -180,8 +180,8 @@ D<-ggplot(imp_logitR0, aes(x=reorder(X, x), y=x)) +
   #               size=.3,    # Thinner lines
   #               width=.2,
   #               position=position_dodge(.9)) +
-  scale_x_discrete(element_blank(), labels = c("scale_i" = "scaled infectiousness",
-                                               "radius" =  "radius","index_sex" = "index sex", "index_line" = "index line")) +
+  scale_x_discrete(element_blank(), labels = c("scale_i" = expression("scaled inf."(eta)),"beta" = expression("trans. eff."(tau)),
+                                               "radius" =  "radius (r)","index_sex" = "index sex", "index_line" = "index line")) +
   #ylab("Mean Decrease in Accuracy") +
   ylab(NULL)+
   theme_bw()+ theme(plot.margin = unit(c(0.1, 0, 0, 0), "cm"))+
@@ -225,8 +225,8 @@ A<-ggplot(imp_logit, aes(x=reorder(X, x), y=x)) +
   #               size=.3,    # Thinner lines
   #               width=.2,
   #               position=position_dodge(.9)) +
-  scale_x_discrete(element_blank(), labels = c("scale_i" = "scaled\n infectiousness",
-                                               "radius" =  "radius", "beta" = "transmission\n efficiency", "vary_agg"= "aggregation\n varied", "vary_infect"="infectiousness\n varied", "vary_dur"="duration varied")) +
+  scale_x_discrete(element_blank(), labels = c("scale_i" = expression("scaled inf."(eta)),"beta" = expression("trans. eff."(tau)),
+                                               "radius" =  "radius (r)", "vary_agg"= "agg. var.", "vary_infect"="inf. var.", "vary_dur"="dur. var.")) +
   ylab("MDA") +
   #ylab("")+
   theme_bw()+ theme(plot.margin = unit(c(0.1, 0, 0, 0), "cm"))+
@@ -245,8 +245,8 @@ B<-ggplot(imp_logitprev, aes(x=reorder(X, x), y=x)) +
   #               size=.3,    # Thinner lines
   #               width=.2,
   #               position=position_dodge(.9)) +
-  scale_x_discrete(element_blank(), labels = c("scale_i" = "scaled\n infectiousness",
-                                               "radius" =  "radius", "beta" = "transmission\n efficiency", "vary_agg"= "aggregation\n varied", "vary_infect"="infectiousness\n varied", "vary_dur"="duration varied")) +
+  scale_x_discrete(element_blank(), labels = c("scale_i" = expression("scaled inf."(eta)),"beta" = expression("trans. eff."(tau)),
+                                               "radius" =  "radius (r)", "vary_agg"= "agg. var.", "vary_infect"="inf. var.", "vary_dur"="dur. var.")) +
   #ylab("Mean Decrease in Accuracy") +
   ylab(NULL)+
   theme_bw()+ theme(plot.margin = unit(c(0.25, 0, 0, 0), "cm"))+
@@ -266,8 +266,8 @@ C<-ggplot(imp_logitdur, aes(x=reorder(X, x), y=x)) +
   #               size=.3,    # Thinner lines
   #               width=.2,
   #               position=position_dodge(.9)) +
-  scale_x_discrete(element_blank(), labels = c("scale_i" = "scaled\n infectiousness",
-                                               "radius" =  "radius", "beta" = "transmission\n efficiency", "vary_agg"= "aggregation\n varied", "vary_infect"="infectiousness\n varied", "vary_dur"="duration varied")) +
+  scale_x_discrete(element_blank(), labels = c("scale_i" = expression("scaled inf."(eta)),"beta" = expression("trans. eff."(tau)),
+                                               "radius" =  "radius (r)", "vary_agg"= "agg. var.", "vary_infect"="inf. var.", "vary_dur"="dur. var.")) +
   #ylab("Mean Decrease in Accuracy") +
   ylab(NULL)+
   theme_bw()+ theme(plot.margin = unit(c(0.1, 0, 0, 0), "cm"))+
@@ -288,8 +288,8 @@ D<-ggplot(imp_logitR0, aes(x=reorder(X, x), y=x)) +
   #               size=.3,    # Thinner lines
   #               width=.2,
   #               position=position_dodge(.9)) +
-  scale_x_discrete(element_blank(), labels = c("scale_i" = "scaled\n infectiousness",
-                                               "radius" =  "radius", "beta" = "transmission\n efficiency", "vary_agg"= "aggregation\n varied", "vary_infect"="infectiousness\n varied", "vary_dur"="duration varied")) +
+  scale_x_discrete(element_blank(), labels = c("scale_i" = expression("scaled inf."(eta)),"beta" = expression("trans. eff."(tau)),
+                                               "radius" =  "radius (r)", "vary_agg"= "agg. var.", "vary_infect"="inf. var.", "vary_dur"="dur. var.")) +
   #ylab("Mean Decrease in Accuracy") +
   ylab(NULL)+
   theme_bw()+ theme(plot.margin = unit(c(0.1, 0, 0, 0), "cm"))+

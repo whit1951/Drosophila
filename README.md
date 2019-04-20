@@ -26,6 +26,10 @@ Simulation of disease on contact networks derived from empirical Drosophila data
 * `PlotRF.R` - code for plotting variable importance results from random forest analysis for Experiments #1, 2 & 3
 
 ## Results
+* `Experiment1Summary.csv` - compiled simulation data for Experiment 1
+* `Experiment2Summary.csv` - compiled simulation data for Experiment 2
+* `Experiment3Summary.csv` - compiled simulation data for Experiment 3
+
 * `Exp#beta...tiff` - Heat map results for each experiment with different parameter combinations
 * `Exp#RF_R0...csv`- Random forest results (variable importance scores) for R0
 * `Exp#RF_dur...csv`- Random forest results (variable importance scores) for epidemic duration

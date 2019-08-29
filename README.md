@@ -1,5 +1,5 @@
 # Drosophila
-Simulation of disease on contact networks derived from empirical Drosophila data infected with Drosophila C Virus (DCV)
+Simulation of disease on contact networks derived from empirical Drosophila data infected with Drosophila C Virus (DCV) for BioRxiv preprint: https://www.biorxiv.org/content/10.1101/735480v1
 
 ## Basic Functions
 * `Exp1functions.R` - Experiment 1 functions needed to run in parallel on supercomputer

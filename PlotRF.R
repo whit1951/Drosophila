@@ -21,7 +21,7 @@ library(cowplot)
 imp_logit<-read.csv("Exp1RF_logit1000.csv")
 imp_logitprev<-read.csv("Exp1RF_maxI1000.csv")
 imp_logitdur<-read.csv("Exp1RF_dur1000.csv")
-
+imp_logitR0<-read.csv("Exp1RF_R0_1000.csv")
 
 #imp_logit$SD<-rep(0.005, times=nrow(imp_logit))
 A<-ggplot(imp_logit, aes(x=reorder(X, x), y=x)) + 
@@ -84,17 +84,38 @@ C<-ggplot(imp_logitdur, aes(x=reorder(X, x), y=x)) +
 #coord_flip()
 C
 
-prow <- plot_grid(A, B, C,
+D<-ggplot(imp_logitR0, aes(x=reorder(X, x), y=x)) + 
+  geom_bar(position=position_dodge(), stat="identity",
+           colour="black", # Use black outlines,
+           size=.3) +      # Thinner lines
+  # geom_errorbar(aes(ymin=X.IncMSE-SD, ymax=X.IncMSE+SD),
+  #               size=.3,    # Thinner lines
+  #               width=.2,
+  #               position=position_dodge(.9)) +
+  scale_x_discrete(element_blank(), labels = c("scale_i" = expression("scaled inf."(eta)),"beta" = expression("trans. eff."(tau)),
+                                               "radius" =  "radius (r)","index_sex" = "index sex", "index_line" = "index line")) +
+  #ylab("Mean Decrease in Accuracy") +
+  ylab(NULL)+
+  theme_bw()+ theme(plot.margin = unit(c(0.1, 0, 0, 0), "cm"))+
+  #ggtitle("(C)") + #" Variable Importance for Epidemic \nDuration|Success") +
+  
+  theme(axis.text=element_text(size=6), plot.title = element_text(size = 8), axis.title=element_text(size=6), axis.text.x=element_text(angle=270, hjust=0, vjust=0.5)) 
+
+#theme(plot.margin=unit(c(-0.25,0.1,0,0), "cm"))
+#coord_flip()
+D
+
+prow <- plot_grid(A, B, C, D,
                   align = 'vh',
-                  labels = c("(A)", "(B)", "(C)"),
-                  hjust = -0.60,
-                  ncol = 3, label_size=6
+                  labels = c("(A)", "(B)", "(C)", "(D)"),
+                  hjust = -0.75,
+                  ncol = 2, label_size=7
 )
 #paxis <- axis_canvas(prow, axis = "y") 
 #ggdraw(insert_yaxis_grob(prow, paxis, grid::unit(.25, "null")))
 
 #setwd()
-tiff("Exp1RF.tiff", height =4.5, width =8.7, units = "cm", compression = "lzw", res = 1200)
+tiff("Exp1RF.tiff", height =8.7, width =8.7, units = "cm", compression = "lzw", res = 1200)
 #multiplot(A, B, C, cols=3)
 prow
 dev.off()

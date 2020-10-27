@@ -1,4 +1,4 @@
-# Drosophila
+# Genotype and sex-based host variation in behaviour and susceptibility drives population disease dynamics
 Simulation of disease on contact networks derived from empirical Drosophila data infected with Drosophila C Virus (DCV) for White LA, Siva-Jothy JA,
 Craft ME, Vale PF. 2020 Genotype and sex-based host variation in behaviour and susceptibility drives population disease dynamics. **Proc. R. Soc. B** 20201653.
 http://dx.doi.org/10.1098/rspb.2020.1653

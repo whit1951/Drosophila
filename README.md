@@ -3,6 +3,8 @@ Simulation of disease on contact networks derived from empirical Drosophila data
 Craft ME, Vale PF. 2020 Genotype and sex-based host variation in behaviour and susceptibility drives population disease dynamics. **Proc. R. Soc. B** 20201653.
 http://dx.doi.org/10.1098/rspb.2020.1653
 
+[![DOI](https://zenodo.org/badge/135700079.svg)](https://zenodo.org/badge/latestdoi/135700079)
+
 ## Basic Functions
 * `Exp1functions.R` - Experiment 1 functions needed to run in parallel on supercomputer
 * `Exp2functions.R` - Experiment 2 functions needed to run in parallel on supercomputer

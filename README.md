@@ -5,6 +5,11 @@ http://dx.doi.org/10.1098/rspb.2020.1653
 
 [![DOI](https://zenodo.org/badge/135700079.svg)](https://zenodo.org/badge/latestdoi/135700079)
 
+## Raw Experimental Data
+* `Dmel DCV Load and Shed.csv`- experimental measurements of viral load detection for experimentally infected flies
+* `Dmel Fixed Radius Social Aggregation.csv`- experimental measurements of social aggregation within 10 mm, 15 mm, and 20 mm 
+* `Dmel Infection Duration and Lethal Load.csv`- experimental measurements of duration of infection (time till death post-infection)
+
 ## Basic Functions
 * `Exp1functions.R` - Experiment 1 functions needed to run in parallel on supercomputer
 * `Exp2functions.R` - Experiment 2 functions needed to run in parallel on supercomputer
